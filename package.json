@@ -1,6 +1,6 @@
 {
   "name": "@murry_qx/create-init-package",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "type": "module",
   "description": "to create a init package as vscode or vite or npm package",
   "main": "index.js",
@@ -13,7 +13,8 @@
     "LICENSE",
     "README.md",
     "package.json",
-    "npm-package-ts"
+    "npm-package-ts",
+    "npm-package-ts/*"
   ],
   "scripts": {
     "b": "unbuild",
