@@ -1,5 +1,5 @@
 {
-  "name": "create-init-package",
+  "name": "@murry_qx/create-init-package",
   "version": "1.0.0",
   "type": "module",
   "description": "to create a init package as vscode or vite or npm package",
