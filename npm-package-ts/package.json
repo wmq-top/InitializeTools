@@ -1,6 +1,6 @@
 {
-  "name": "@murry_qx/create-init-package",
-  "version": "1.0.3",
+  "name": "npm-init-package",
+  "version": "1.0.0",
   "type": "module",
   "description": "to create a init package as vscode or vite or npm package",
   "main": "index.js",
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wmq-top/InitializeTools.git"
+    "url": ""
   },
   "keywords": [
     "vite",
@@ -35,9 +35,8 @@
   "author": "geeker_q",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wmq-top/InitializeTools/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/wmq-top/InitializeTools#readme",
   "devDependencies": {
     "bumpp": "^8.2.1",
     "changelogen": "^0.4.1",
@@ -51,7 +50,6 @@
     "@types/node": "^18.11.18",
     "@types/prompts": "^2.4.2",
     "node": "^18.13.0",
-    "tsup": "^6.5.0",
     "unbuild": "^1.1.1"
   }
 }
