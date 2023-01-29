@@ -12,7 +12,8 @@
     "index.js",
     "LICENSE",
     "README.md",
-    "package.json"
+    "package.json",
+    "npm-package-ts"
   ],
   "scripts": {
     "b": "unbuild",
