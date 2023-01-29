@@ -1,6 +1,6 @@
 {
   "name": "@murry_qx/create-init-package",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "description": "to create a init package as vscode or vite or npm package",
   "main": "index.js",
