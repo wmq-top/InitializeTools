@@ -1,0 +1,54 @@
+{
+  "name": "create-init-package",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "to create a init package as vscode or vite or npm package",
+  "main": "index.js",
+  "bin": {
+    "create-init-package": "index.js"
+  },
+  "files": [
+    "dist",
+    "index.js",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "b": "tsup",
+    "t": "test",
+    "pr": "npm run b && node index.js",
+    "nl": "npm run b && npm link",
+    "rl": "bumpp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmq-top/InitializeTools.git"
+  },
+  "keywords": [
+    "vite",
+    "vscode",
+    "npm",
+    "plugin"
+  ],
+  "author": "murry_qx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wmq-top/InitializeTools/issues"
+  },
+  "homepage": "https://github.com/wmq-top/InitializeTools#readme",
+  "devDependencies": {
+    "bumpp": "^8.2.1",
+    "cross-spawn": "^6.0.2",
+    "kolorist": "^1.6.0",
+    "minimist": "^1.2.6",
+    "prompts": "^2.4.2",
+    "typescript": "^5.0.0-dev.20230118"
+  },
+  "dependencies": {
+    "@types/node": "^18.11.18",
+    "@types/prompts": "^2.4.2",
+    "node": "^18.13.0",
+    "tsup": "^6.5.0"
+  }
+}
