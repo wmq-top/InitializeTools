@@ -1,6 +1,9 @@
 # Changelog
 
 
+## v1.1.3...v1.1.3
+add vite + vue3 self template
+
 ## v1.0.3...main
 
 

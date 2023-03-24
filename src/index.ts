@@ -1,9 +1,9 @@
 import { fileURLToPath } from "node:url"
 import prompts from "prompts"
-// import type { PromptObject } from 'prompts'
-import type { NpmUserAns } from './type'
+import type { NpmUserAns, ProjectConfig } from './type'
 import { npmPrompt, InitializeNpmPackage } from './promptForNpm'
-import { red, lightGreen, blue, lightRed, reset } from 'kolorist'
+import { projectPrompt, InitializeProject } from './promptForVuePro'
+import { red, lightGreen, blue, lightRed, yellow, reset } from 'kolorist'
 import { exit } from "node:process"
 
 const cwd = process.cwd()
@@ -11,7 +11,8 @@ const cwd = process.cwd()
 const projectTypeList = [
   { name: 'npmPackage', display: 'npmPackage', color: lightRed },
   { name: 'vsCodePlugin', display: 'vsCodePlugin', color: blue },
-  { name: 'vitePlugin', display: 'vitePlugin', color: lightGreen }
+  { name: 'vitePlugin', display: 'vitePlugin', color: lightGreen },
+  { name: 'vue3Vite', display: 'vue3Vite', color: yellow }
 ]
 
 async function init() {
@@ -55,6 +56,17 @@ async function init() {
   } else if (projectType === 'vitePlugin') {
     console.log(red('developing···'))
     exit(1)
+  } else if (projectType === 'vue3Vite') {
+    let result: prompts.Answers<ProjectConfig>
+    try {
+      result = await prompts(projectPrompt, {
+        onCancel: () => { throw new Error(red('OP cancel')) }
+      })
+    } catch (cancelled: any) {
+      console.log(cancelled.message)
+      return
+    }
+    InitializeProject(result, cwd, fileURLToPath(import.meta.url))
   }
 }
 

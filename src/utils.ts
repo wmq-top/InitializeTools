@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import type { NpmUserAns, ViteConfig } from './type'
+import type { NpmUserAns, ViteConfig, ProjectConfig } from './type'
 
 function isValidVersion(input: string | undefined): boolean {
   if (!input) return true
@@ -50,10 +50,17 @@ function buildPackageJsonFile(pkg: any, userConfig: Record<NpmUserAns, string>) 
   pkg.license = userConfig.license
   pkg.scripts.pr = `npm run build && node ${userConfig.entryPoint}`
 }
-
+function buildProjectJsonFile(pkg: any, userConfig: Record<ProjectConfig, string>) {
+  pkg.name = userConfig.projectName
+  pkg.repository.url = userConfig.gitRegistry
+}
 function buildViteJsonFile(pkg: any, userConfig: Record<ViteConfig, string>) {
   pkg.name = userConfig.packageName
   pkg.repository.url = userConfig.gitRegistry
 }
-
-export { isValidVersion, isValidPackageName, entryCheck, copy, copyDir, buildPackageJsonFile, buildViteJsonFile }
+function isValidRegistry(input: string | undefined): boolean {
+  if (!input) return false
+  const rgx = /^(https\:\/\/|ssh\:\/\/).*/i
+  return rgx.test(input)
+}
+export { isValidVersion, isValidPackageName, isValidRegistry, entryCheck, copy, copyDir, buildPackageJsonFile, buildViteJsonFile, buildProjectJsonFile }

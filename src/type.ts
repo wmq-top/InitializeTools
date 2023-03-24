@@ -11,3 +11,5 @@ export type LanguageChoice = {
 }
 
 export type ViteConfig = 'packageName' | 'gitRegistry'
+
+export type ProjectConfig = 'projectName' | 'gitRegistry'
