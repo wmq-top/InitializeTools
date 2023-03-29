@@ -7,13 +7,6 @@
   "bin": {
     "create-init-package": "index.js"
   },
-  "files": [
-    "dist",
-    "index.js",
-    "LICENSE",
-    "README.md",
-    "package.json"
-  ],
   "scripts": {
     "b": "unbuild",
     "t": "test",
